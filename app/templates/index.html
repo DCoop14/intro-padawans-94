@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+    
+    
+    {% block content%}
+    
+    <a href="/contact">Go to contact Page</a>
+
+    {% for x in names %}
+        {% if x['name'] == 'Shoha' %}
+            <div class="card" style="width: 18rem;">
+                <img src="{{ x['img'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h1 class="card-title">{{ x['name'] }}</h1>
+                    <p class="card-text">Age: {{ x.age }}</p>
+                </div>
+            </div>
+
+        {% else %}
+            <div class="card" style="width: 18rem;">
+                <img src="{{ x['img'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ x['name'] }}</h5>
+                    <p class="card-text">Age: {{ x.age }}</p>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    {{ hello }}
+
+
+    {% endblock %}
